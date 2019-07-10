@@ -3,7 +3,6 @@
 
 namespace SirSova\Webhooks\Test;
 
-
 use Illuminate\Foundation\Testing\WithFaker;
 use SirSova\Webhooks\Test\Traits\PackageSetUp;
 
@@ -14,9 +13,8 @@ class TestCase extends \Orchestra\Testbench\TestCase
     
     public function setUp(): void
     {
-        parent::setUp(); 
+        parent::setUp();
         
         $this->setUpMigrate();
     }
-
 }

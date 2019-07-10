@@ -3,7 +3,6 @@
 
 namespace SirSova\Webhooks\Jobs;
 
-
 use Illuminate\Bus\Queueable;
 use Illuminate\Foundation\Bus\Dispatchable;
 use Illuminate\Queue\InteractsWithQueue;
@@ -53,7 +52,7 @@ class ProcessWebhook
     /**
      * @param Channel $channel
      */
-    public function handle(Channel $channel): void 
+    public function handle(Channel $channel): void
     {
         $channel->send($this->webhook);
     }

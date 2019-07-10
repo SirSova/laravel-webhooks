@@ -3,7 +3,6 @@
 
 namespace SirSova\Webhooks\Test\Jobs;
 
-
 use GuzzleHttp\ClientInterface;
 use Psr\Http\Message\RequestInterface;
 use SirSova\Webhooks\Jobs\ProcessWebhook;
@@ -14,7 +13,7 @@ use SirSova\Webhooks\WebhookChannel;
 
 class WebhooksTest extends TestCase
 {
-    public function testDispatchingWebhook(): void 
+    public function testDispatchingWebhook(): void
     {
         $message = new Message($this->faker->word, ['foo' => 'bar']);
         $webhook = new Webhook($message, $this->faker->url);
@@ -25,7 +24,7 @@ class WebhooksTest extends TestCase
         dispatch($job);
     }
     
-    public function testChannelSending(): void 
+    public function testChannelSending(): void
     {
         $messageData = ['foo' => 'bar'];
         $message = new Message($this->faker->word, $messageData);

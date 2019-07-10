@@ -3,7 +3,6 @@
 
 namespace SirSova\Webhooks;
 
-
 use GuzzleHttp\ClientInterface;
 use GuzzleHttp\Exception\GuzzleException;
 use GuzzleHttp\Psr7\Request;
@@ -25,7 +24,7 @@ class WebhookChannel implements Channel
     /**
      * @param Webhook $webhook
      */
-    public function send(Webhook $webhook): void 
+    public function send(Webhook $webhook): void
     {
         $request = new Request('POST', $webhook->url(), $this->defaultHeaders(), json_encode($webhook->context()));
         
@@ -39,7 +38,7 @@ class WebhookChannel implements Channel
     /**
      * @return array
      */
-    protected function defaultHeaders(): array 
+    protected function defaultHeaders(): array
     {
         return ['Content-type' => 'application/json'];
     }

@@ -3,21 +3,20 @@
 
 namespace SirSova\Webhooks\Subscribers;
 
-
 use SirSova\Webhooks\Contracts\Subscriber as SubscriberContract;
 
 class Subscriber implements SubscriberContract
 {
     /**
-     * @var string 
+     * @var string
      */
     private $event;
     /**
-     * @var string 
+     * @var string
      */
     private $url;
     /**
-     * @var bool 
+     * @var bool
      */
     private $enabled;
     
@@ -28,22 +27,22 @@ class Subscriber implements SubscriberContract
         $this->enabled = $enabled;
     }
 
-    public function event(): string 
+    public function event(): string
     {
         return $this->event;
     }
     
-    public function url(): string 
+    public function url(): string
     {
         return $this->url;
     }
     
-    public function isEnabled(): bool 
+    public function isEnabled(): bool
     {
         return $this->enabled;
     }
     
-    public function toArray(): array 
+    public function toArray(): array
     {
         return [
             'event'   => $this->event(),

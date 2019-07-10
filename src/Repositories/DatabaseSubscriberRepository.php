@@ -3,7 +3,6 @@
 
 namespace SirSova\Webhooks\Repositories;
 
-
 use Illuminate\Contracts\Validation\Factory as ValidatorFactory;
 use Illuminate\Contracts\Validation\Validator;
 use Illuminate\Database\ConnectionInterface;
@@ -26,7 +25,7 @@ class DatabaseSubscriberRepository implements SubscriberRepository
      */
     private $table;
     /**
-     * @var ValidatorFactory 
+     * @var ValidatorFactory
      */
     private $validatorFactory;
 

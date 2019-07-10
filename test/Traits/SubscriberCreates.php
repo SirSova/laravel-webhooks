@@ -3,7 +3,6 @@
 
 namespace SirSova\Webhooks\Test\Traits;
 
-
 use SirSova\Webhooks\Contracts\Subscriber;
 use SirSova\Webhooks\Contracts\SubscriberRepository;
 

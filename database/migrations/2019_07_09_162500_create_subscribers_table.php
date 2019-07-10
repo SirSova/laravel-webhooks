@@ -27,7 +27,7 @@ class CreateSubscribersTable extends Migration
      *
      * @return void
      */
-    public function down(): void 
+    public function down(): void
     {
         Schema::dropIfExists('webhook_subscribers');
     }

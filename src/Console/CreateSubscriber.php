@@ -3,7 +3,6 @@
 
 namespace SirSova\Webhooks\Console;
 
-
 use Illuminate\Console\Command;
 use Illuminate\Validation\ValidationException;
 use SirSova\Webhooks\Contracts\SubscriberRepository;
@@ -42,7 +41,7 @@ class CreateSubscriber extends Command
     /**
      * @return int
      */
-    public function handle(): int 
+    public function handle(): int
     {
         $data = [
             'event'   => $this->argument('event'),

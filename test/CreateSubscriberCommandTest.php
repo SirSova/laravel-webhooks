@@ -3,7 +3,6 @@
 
 namespace SirSova\Webhooks\Test;
 
-
 use SirSova\Webhooks\Contracts\SubscriberRepository;
 use SirSova\Webhooks\Subscribers\Subscriber;
 
@@ -24,12 +23,12 @@ class CreateSubscriberCommandTest extends TestCase
 
     /**
      * @dataProvider subscriberProvider
-     * 
+     *
      * @param string $event
      * @param string $url
      * @param bool   $enabled
      */
-    public function testCreate(string $event, string $url, bool $enabled): void 
+    public function testCreate(string $event, string $url, bool $enabled): void
     {
         $params = [
             'event' => $event,
@@ -65,7 +64,7 @@ class CreateSubscriberCommandTest extends TestCase
         ];
     }
     
-    public function testNotValidUrl(): void 
+    public function testNotValidUrl(): void
     {
         $command = $this->artisan('webhooks:subscriber', [
             'event' => 'event',

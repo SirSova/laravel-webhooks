@@ -3,7 +3,6 @@
 
 namespace SirSova\Webhooks\Contracts;
 
-
 use SirSova\Webhooks\Message;
 
 interface MessageProcessor

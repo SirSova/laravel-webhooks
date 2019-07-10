@@ -3,7 +3,6 @@
 
 namespace SirSova\Webhooks;
 
-
 use Illuminate\Contracts\Bus\Dispatcher;
 use SirSova\Webhooks\Contracts\SubscriberRepository;
 use SirSova\Webhooks\Contracts\MessageProcessor as ProcessorContract;
@@ -12,15 +11,15 @@ use SirSova\Webhooks\Jobs\ProcessWebhook;
 class MessageProcessor implements ProcessorContract
 {
     /**
-     * @var SubscriberRepository 
+     * @var SubscriberRepository
      */
     private $subscriberRepository;
     /**
-     * @var Dispatcher 
+     * @var Dispatcher
      */
     private $dispatcher;
     /**
-     * @var string|null 
+     * @var string|null
      */
     private $queue;
     

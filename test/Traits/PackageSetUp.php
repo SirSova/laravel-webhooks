@@ -3,7 +3,6 @@
 
 namespace SirSova\Webhooks\Test\Traits;
 
-
 use SirSova\Webhooks\ServiceProvider;
 
 trait PackageSetUp
@@ -27,7 +26,7 @@ trait PackageSetUp
      *
      * @return void
      */
-    protected function getEnvironmentSetUp($app): void 
+    protected function getEnvironmentSetUp($app): void
     {
         $app['config']->set('database.default', 'testing');
     }
