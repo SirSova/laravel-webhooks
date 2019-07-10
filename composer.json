@@ -1,0 +1,42 @@
+{
+    "name": "sirsova/laravel-webhooks",
+    "type": "library",
+    "description": "Implementation of queued webhooks for laravel",
+    "keywords": ["webhooks", "laravel"],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Sokolov Vladimir",
+            "email": "fly.shadow373@gmail.com"
+        }
+    ],
+    "require": {
+        "php": "^7.1",
+        "ext-json": "*",
+        "guzzlehttp/guzzle": "^6.3",
+        "illuminate/bus": "^5.8",
+        "illuminate/queue": "^5.8",
+        "illuminate/support": "^5.8"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^7.0",
+        "orchestra/testbench": "^3.5"
+    },
+    "autoload": {
+        "psr-4": {
+            "SirSova\\Webhooks\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "SirSova\\Webhooks\\Test\\": "test/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "SirSova\\Webhooks\\ServiceProvider"
+            ]
+        }
+    }
+}
