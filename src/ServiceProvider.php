@@ -3,7 +3,6 @@
 
 namespace SirSova\Webhooks;
 
-
 use GuzzleHttp\Client;
 use Illuminate\Contracts\Bus\Dispatcher as BusDispatcher;
 use Illuminate\Contracts\Container\Container;
@@ -17,8 +16,7 @@ use SirSova\Webhooks\Repositories\DatabaseSubscriberRepository;
 
 class ServiceProvider extends BaseServiceProvider
 {
-    
-    public function register(): void 
+    public function register(): void
     {
         $this->app->bind(SubscriberRepository::class, function (Container $container) {
             return new DatabaseSubscriberRepository(
@@ -41,7 +39,7 @@ class ServiceProvider extends BaseServiceProvider
         });
     }
     
-    public function boot(): void 
+    public function boot(): void
     {
         if ($this->app->runningInConsole()) {
             //config

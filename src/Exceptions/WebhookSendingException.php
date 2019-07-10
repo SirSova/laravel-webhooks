@@ -3,7 +3,6 @@
 
 namespace SirSova\Webhooks\Exceptions;
 
-
 use GuzzleHttp\Exception\GuzzleException;
 
 class WebhookSendingException extends \RuntimeException implements WebhookException

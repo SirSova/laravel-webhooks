@@ -3,7 +3,6 @@
 
 namespace SirSova\Webhooks\Jobs;
 
-
 use Illuminate\Bus\Queueable;
 use Illuminate\Foundation\Bus\Dispatchable;
 use Illuminate\Queue\InteractsWithQueue;
@@ -31,7 +30,7 @@ class ProcessMessage
      *
      * @return ProcessMessage
      */
-    public static function queue(string $type, $context, ?string $queue = null): self 
+    public static function queue(string $type, $context, ?string $queue = null): self
     {
         return static::create($type, $context)->onQueue($queue ?? config('webhooks.message-queue'));
     }
@@ -42,7 +41,7 @@ class ProcessMessage
      *
      * @return ProcessMessage
      */
-    public static function create(string $type, $context): self 
+    public static function create(string $type, $context): self
     {
         return new static(new Message($type, $context));
     }
@@ -50,7 +49,7 @@ class ProcessMessage
     /**
      * @param MessageProcessor $messageProcessor
      */
-    public function handle(MessageProcessor $messageProcessor): void 
+    public function handle(MessageProcessor $messageProcessor): void
     {
         $messageProcessor->process($this->message);
     }

@@ -3,7 +3,6 @@
 
 namespace SirSova\Webhooks\Subscribers;
 
-
 use Illuminate\Support\Collection;
 use SirSova\Webhooks\Contracts\Subscriber;
 
@@ -15,7 +14,7 @@ class SubscribersCollection extends Collection
     /**
      * @return SubscribersCollection
      */
-    public function getUrls(): self 
+    public function getUrls(): self
     {
         return $this->map(function (Subscriber $subscriber) {
             return $subscriber->url();
@@ -27,7 +26,7 @@ class SubscribersCollection extends Collection
      *
      * @return SubscribersCollection
      */
-    public function filterByEvent(string $eventName): self 
+    public function filterByEvent(string $eventName): self
     {
         return $this->filter(function (Subscriber $subscriber) use ($eventName) {
             return $subscriber->event() === $eventName;
@@ -37,7 +36,7 @@ class SubscribersCollection extends Collection
     /**
      * @return SubscribersCollection
      */
-    public function filterEnabled(): self 
+    public function filterEnabled(): self
     {
         return $this->filter(function (Subscriber $subscriber) {
             return $subscriber->isEnabled();

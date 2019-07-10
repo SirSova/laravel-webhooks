@@ -3,7 +3,6 @@
 
 namespace SirSova\Webhooks;
 
-
 class Webhook
 {
 
@@ -33,7 +32,7 @@ class Webhook
     /**
      * @return string
      */
-    public function type(): string 
+    public function type(): string
     {
         return $this->message->type();
     }
@@ -41,7 +40,7 @@ class Webhook
     /**
      * @return string
      */
-    public function url(): string 
+    public function url(): string
     {
         return $this->url;
     }

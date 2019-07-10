@@ -3,7 +3,6 @@
 
 namespace SirSova\Webhooks\Contracts;
 
-
 use Illuminate\Validation\ValidationException;
 use SirSova\Webhooks\Subscribers\DatabaseSubscriber;
 use SirSova\Webhooks\Subscribers\SubscribersCollection;

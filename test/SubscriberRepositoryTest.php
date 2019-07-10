@@ -3,7 +3,6 @@
 
 namespace SirSova\Webhooks\Test;
 
-
 use SirSova\Webhooks\Contracts\Subscriber;
 use SirSova\Webhooks\Contracts\SubscriberRepository;
 
@@ -24,7 +23,7 @@ class SubscriberRepositoryTest extends TestCase
     /**
      * @throws \Illuminate\Validation\ValidationException
      */
-    public function testCreate(): void 
+    public function testCreate(): void
     {
         $data = $this->randomSubscriberData();
         $subscriber = $this->repository->create($data);
@@ -35,7 +34,7 @@ class SubscriberRepositoryTest extends TestCase
         $this->assertInstanceOf(Subscriber::class, $subscriber);
     }
     
-    public function testFind(): void 
+    public function testFind(): void
     {
         $data = $this->randomSubscriberData();
         $id = \DB::table('webhook_subscribers')
@@ -45,11 +44,11 @@ class SubscriberRepositoryTest extends TestCase
         
         $this->assertEquals($data['event'], $subscriber->event());
         $this->assertEquals($data['url'], $subscriber->url());
-        $this->assertEquals($data['enabled'], $subscriber->isEnabled());        
+        $this->assertEquals($data['enabled'], $subscriber->isEnabled());
         $this->assertInstanceOf(Subscriber::class, $subscriber);
     }
     
-    public function testFindAllByEvent(): void 
+    public function testFindAllByEvent(): void
     {
         $event = 'test';
         $data = [
@@ -71,7 +70,7 @@ class SubscriberRepositoryTest extends TestCase
         $this->assertEquals($expected, $result);
     }
     
-    public function testRemove(): void 
+    public function testRemove(): void
     {
         $id = \DB::table('webhook_subscribers')->insertGetId($this->randomSubscriberData());
         
@@ -82,7 +81,7 @@ class SubscriberRepositoryTest extends TestCase
         $this->assertNull($found);
     }
     
-    private function randomSubscriberData(array $data = []): array 
+    private function randomSubscriberData(array $data = []): array
     {
         return array_merge([
             'event'   => $this->faker->word,

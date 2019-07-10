@@ -27,8 +27,8 @@ class DatabaseSubscriber implements SubscriberContract
 
     public function __construct(
         SubscriberContract $subscriber,
-        int $id, 
-        ?DateTimeInterface $createdAt = null, 
+        int $id,
+        ?DateTimeInterface $createdAt = null,
         ?DateTimeInterface $updatedAt = null
     ) {
         $this->id = $id;
@@ -61,7 +61,7 @@ class DatabaseSubscriber implements SubscriberContract
     /**
      * @return int
      */
-    public function id(): int 
+    public function id(): int
     {
         return $this->id;
     }

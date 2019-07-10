@@ -3,7 +3,6 @@
 
 namespace SirSova\Webhooks\Contracts;
 
-
 interface Subscriber
 {
     /**

@@ -3,7 +3,6 @@
 
 namespace SirSova\Webhooks\Test\Jobs;
 
-
 use Illuminate\Contracts\Bus\Dispatcher;
 use SirSova\Webhooks\Contracts\SubscriberRepository;
 use SirSova\Webhooks\Jobs\ProcessMessage;
@@ -27,7 +26,7 @@ class MessagesTest extends TestCase
         dispatch($job);
     }
     
-    public function testMessageProcessor(): void 
+    public function testMessageProcessor(): void
     {
         $subscriber = $this->createRandomSubscriber(['enabled' => true]);
         $message = new Message($subscriber->event(), ['foo' => 'bar']);
@@ -38,5 +37,4 @@ class MessagesTest extends TestCase
         
         $processor->process($message);
     }
-
 }
