@@ -4,6 +4,7 @@
 namespace SirSova\Webhooks;
 
 use Illuminate\Contracts\Bus\Dispatcher;
+use Illuminate\Contracts\Bus\QueueingDispatcher;
 use SirSova\Webhooks\Contracts\SubscriberRepository;
 use SirSova\Webhooks\Contracts\MessageProcessor as ProcessorContract;
 use SirSova\Webhooks\Jobs\ProcessWebhook;
@@ -41,12 +42,13 @@ class MessageProcessor implements ProcessorContract
         
         foreach ($subscribers as $subscriber) {
             $job = new ProcessWebhook(new Webhook($message, $subscriber->url()));
-            
-            if ($this->queue) {
+
+            if ($this->dispatcher instanceof QueueingDispatcher && $this->queue) {
                 $job->onQueue($this->queue);
+                $this->dispatcher->dispatchToQueue($job);
+            } else {
+                $this->dispatcher->dispatch($job);
             }
-            
-            $this->dispatcher->dispatch($job);
         }
     }
 }

@@ -30,7 +30,7 @@ class ProcessMessage
      *
      * @return ProcessMessage
      */
-    public static function queue(string $type, $context, ?string $queue = null): self
+    public static function queued(string $type, $context, ?string $queue = null): self
     {
         return static::create($type, $context)->onQueue($queue ?? config('webhooks.message-queue'));
     }

@@ -32,7 +32,7 @@ class ProcessWebhook
      *
      * @return ProcessWebhook
      */
-    public static function queue(string $type, $context, string $url, ?string $queue = null): self
+    public static function queued(string $type, $context, string $url, ?string $queue = null): self
     {
         return static::create($type, $context, $url)->onQueue($queue ?? config('webhooks.webhook-queue'));
     }
