@@ -39,7 +39,7 @@ class DatabaseSubscriberRepository implements SubscriberRepository
     /**
      * @param $id
      *
-     * @return DatabaseSubscriber
+     * @return DatabaseSubscriber|null
      */
     public function find($id): ?DatabaseSubscriber
     {
@@ -83,8 +83,11 @@ class DatabaseSubscriberRepository implements SubscriberRepository
             throw new ValidationException($validator);
         }
         
-        if ($id = $this->query()->insertGetId($data)) {
-            return $this->find($id);
+        $id = $this->query()->insertGetId($data);
+        $subscriber = $this->find($id);
+        
+        if ($subscriber !== null) {
+            return $subscriber;
         }
         
         throw new UnableToSaveException('Something going wrong, subscriber was not saved to Database');
@@ -97,7 +100,7 @@ class DatabaseSubscriberRepository implements SubscriberRepository
      */
     public function remove($id): bool
     {
-        return $this->query()->delete($id);
+        return (bool)$this->query()->delete($id);
     }
 
     /**

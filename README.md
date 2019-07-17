@@ -7,7 +7,6 @@ This package implements the standard logic for sending webhooks using laravel qu
 [![Software License](https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square)](LICENSE)
 [![StyleCI](https://styleci.io/repos/196221813/shield)](https://styleci.io/repos/196221813)
 [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/SirSova/laravel-webhooks/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/SirSova/laravel-webhooks/?branch=master)
-[![Code Coverage](https://scrutinizer-ci.com/g/SirSova/laravel-webhooks/badges/coverage.png?b=master)](https://scrutinizer-ci.com/g/SirSova/laravel-webhooks/?branch=master)
 
 # Contents
 - [Installation](#installation)
